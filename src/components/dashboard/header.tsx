@@ -33,7 +33,7 @@ const Header: React.FC = () => {
           {/* <!-- End Logo --> */}
         </div>
 
-        <div className="w-full flex items-center justify-end ms-auto md:justify-between gap-x-1 md:gap-x-3">
+        <div className="w-full flex items-center justify-end  gap-x-1 md:gap-x-3">
           {/* <!-- Collapse --> */}
           <div className="md:hidden">
             <button
@@ -81,8 +81,7 @@ const Header: React.FC = () => {
           </div>
           {/* <!-- End Collapse --> */}
 
-          <div className="hidden md:block">
-            {/* <!-- Search Input --> */}
+          {/* <div className="hidden md:block">
             <div className="relative">
               <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5">
                 <svg
@@ -131,43 +130,8 @@ const Header: React.FC = () => {
                   </svg>
                 </button>
               </div>
-              <div className="absolute inset-y-0 end-0 flex items-center pointer-events-none z-20 pe-3 text-gray-400">
-                <svg
-                  className="shrink-0 size-3 text-gray-400"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
-                </svg>
-                <span className="mx-1">
-                  <svg
-                    className="shrink-0 size-3 text-gray-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M5 12h14" />
-                    <path d="M12 5v14" />
-                  </svg>
-                </span>
-                <span className="text-xs">/</span>
-              </div>
             </div>
-            {/* <!-- End Search Input --> */}
-          </div>
+          </div> */}
 
           <div className="flex flex-row items-center justify-end gap-1">
             <button
