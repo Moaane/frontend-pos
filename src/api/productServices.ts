@@ -1,22 +1,35 @@
 import axios from "axios";
-import { Product } from "../types/types";
 import api from "./api";
+import { PaginatedResult } from "../interfaces/pagination.interface";
+import { Product } from "../interfaces/product.interface";
 
-const getProducts = async (
+export const getProducts = async (
   controller: AbortController,
   query?: string
-): Promise<Product[]> => {
+): Promise<PaginatedResult<Product[]>> => {
   try {
-    const response = await api.get<{ data: Product[] }>(`/products?${query}`, {
+    const response = await api.get(`/products?${query}`, {
       signal: controller.signal,
     });
-
-    return response.data.data; // Mengambil data produk dari response
+    return {
+      data: response.data.data,
+      meta: response.data.meta,
+    }; // Mengambil data produk dari response
   } catch (error) {
     // Tangani pembatalan permintaan dengan mengabaikan CanceledError
     if (axios.isCancel(error)) {
       console.log("Request was cancelled");
-      return [];
+      return {
+        data: [],
+        meta: {
+          total: 0,
+          lastPage: 0,
+          currentPage: 0,
+          perPage: 0,
+          prev: null,
+          next: null,
+        },
+      };
     } else if (error instanceof Error) {
       console.error("An error occurred:", error.message);
       throw error; // Melempar error lain
@@ -26,5 +39,3 @@ const getProducts = async (
     }
   }
 };
-
-export { getProducts };

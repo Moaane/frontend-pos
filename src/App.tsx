@@ -4,8 +4,8 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "preline/preline";
 import { IStaticMethods } from "preline/preline";
-import DashboardPage from "./pages/dashboardPage";
 import ProductPage from "./pages/dashboard/productPage";
+import DashboardPage from "./pages/dashboardPage";
 declare global {
   interface Window {
     HSStaticMethods: IStaticMethods;
@@ -21,7 +21,7 @@ const MainApp: React.FC = () => {
   return (
     <Routes>
       <Route path="/dashboard" element={<DashboardPage />} />
-      <Route path="/dashboard/products" element={<ProductPage />} />
+      <Route path="/dashboard/products/menu" element={<ProductPage />} />
     </Routes>
   );
 };

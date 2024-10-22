@@ -1,4 +1,4 @@
-interface Product {
+export interface Product {
   id: string;
   name: string;
   price: number;
@@ -9,5 +9,3 @@ interface Product {
     orderItems: number;
   } | null;
 }
-
-export type { Product };

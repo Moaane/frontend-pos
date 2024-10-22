@@ -62,12 +62,12 @@ const Sidebar: React.FC = () => {
                     className="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
                     href="#"
                   >
-                    <House className="shrink-0 size-4"/>
+                    <House className="shrink-0 size-4" />
                     Dashboard
                   </a>
                 </li>
 
-                <li className="hs-accordion" id="users-accordion">
+                {/* <li className="hs-accordion" id="users-accordion">
                   <button
                     type="button"
                     className="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
@@ -262,7 +262,7 @@ const Sidebar: React.FC = () => {
                       </li>
                     </ul>
                   </div>
-                </li>
+                </li> */}
 
                 <li className="hs-accordion" id="account-accordion">
                   <button
@@ -271,31 +271,8 @@ const Sidebar: React.FC = () => {
                     aria-expanded="true"
                     aria-controls="account-accordion-child"
                   >
-                    <svg
-                      className="shrink-0 mt-0.5 size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <circle cx="18" cy="15" r="3" />
-                      <circle cx="9" cy="7" r="4" />
-                      <path d="M10 15H6a4 4 0 0 0-4 4v2" />
-                      <path d="m21.7 16.4-.9-.3" />
-                      <path d="m15.2 13.9-.9-.3" />
-                      <path d="m16.6 18.7.3-.9" />
-                      <path d="m19.1 12.2.3-.9" />
-                      <path d="m19.6 18.7-.4-1" />
-                      <path d="m16.8 12.3-.4-1" />
-                      <path d="m14.3 16.6 1-.4" />
-                      <path d="m20.7 13.8 1-.4" />
-                    </svg>
-                    Account
+                    <PackageSearch className="shrink-0 size-4" />
+                    Products
                     <svg
                       className="hs-accordion-active:block ms-auto hidden size-4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -338,23 +315,15 @@ const Sidebar: React.FC = () => {
                           className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
                           href="#"
                         >
-                          Link 1
+                          Category
                         </a>
                       </li>
                       <li>
                         <a
                           className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
-                          href="#"
+                          href="/dashboard/products/menu"
                         >
-                          Link 2
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
-                          href="#"
-                        >
-                          Link 3
+                          Menu
                         </a>
                       </li>
                     </ul>
