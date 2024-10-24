@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import formatter from "../../helper/formatCurrency";
-import DashboardLayout from "../../layouts/dashboardLayout";
-import { getProducts } from "../../api/productServices";
-import Pagination from "../../components/pagination";
-import { Product } from "../../interfaces/product.interface";
-import { PaginationMeta } from "../../interfaces/pagination.interface";
-import { Category } from "../../interfaces/category.interface";
-import { getCategories } from "../../api/categoryService";
+import formatter from "../../../helper/formatCurrency";
+import DashboardLayout from "../../../layouts/dashboardLayout";
+import { getProducts } from "../../../api/productServices";
+import Pagination from "../../../components/pagination";
+import { Product } from "../../../interfaces/product.interface";
+import { PaginationMeta } from "../../../interfaces/pagination.interface";
+import { Category } from "../../../interfaces/category.interface";
+import { getCategories } from "../../../api/categoryService";
 
-const ProductPage: React.FC = () => {
+const MenuProduct: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(false);
@@ -35,7 +35,6 @@ const ProductPage: React.FC = () => {
         controller,
         `sort=desc&search=${search}&page=${pagination.currentPage}&perPage=${pagination.perPage}`
       );
-
       setProducts(response.data);
       setPagination(response.meta);
     } catch (err) {
@@ -114,14 +113,14 @@ const ProductPage: React.FC = () => {
                   <div className="inline-flex gap-x-2">
                     <a
                       className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50"
-                      href="#"
+                      href=""
                     >
                       View all
                     </a>
 
                     <a
                       className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-                      href="#"
+                      href="/dashboard/products/new"
                     >
                       <svg
                         className="shrink-0 size-4"
@@ -131,9 +130,9 @@ const ProductPage: React.FC = () => {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="M5 12h14" />
                         <path d="M12 5v14" />
@@ -143,36 +142,6 @@ const ProductPage: React.FC = () => {
                   </div>
                 </div>
               </div>
-              {/* <div className="py-3 px-4">
-                <div className="relative max-w-xs">
-                  <label className="sr-only">Search</label>
-                  <input
-                    type="text"
-                    name="hs-table-with-pagination-search"
-                    id="hs-table-with-pagination-search"
-                    className="py-2 px-3 ps-9 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
-                    placeholder="Search for items"
-                    onChange={(e) => setSearch(e.target.value)}
-                  />
-                  <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-3">
-                    <svg
-                      className="size-4 text-gray-400"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <circle cx="11" cy="11" r="8"></circle>
-                      <path d="m21 21-4.3-4.3"></path>
-                    </svg>
-                  </div>
-                </div>
-              </div> */}
               <div className="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-neutral-700">
                 {/* <!-- Input --> */}
                 <div className="sm:col-span-1">
@@ -231,9 +200,9 @@ const ProductPage: React.FC = () => {
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         >
                           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                           <polyline points="7 10 12 15 17 10" />
@@ -263,9 +232,9 @@ const ProductPage: React.FC = () => {
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                             >
                               <rect
                                 width="8"
@@ -291,9 +260,9 @@ const ProductPage: React.FC = () => {
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                             >
                               <polyline points="6 9 6 2 18 2 18 9" />
                               <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
@@ -336,7 +305,7 @@ const ProductPage: React.FC = () => {
                               viewBox="0 0 16 16"
                             >
                               <path
-                                fill-rule="evenodd"
+                                fillRule="evenodd"
                                 d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM3.517 14.841a1.13 1.13 0 0 0 .401.823c.13.108.289.192.478.252.19.061.411.091.665.091.338 0 .624-.053.859-.158.236-.105.416-.252.539-.44.125-.189.187-.408.187-.656 0-.224-.045-.41-.134-.56a1.001 1.001 0 0 0-.375-.357 2.027 2.027 0 0 0-.566-.21l-.621-.144a.97.97 0 0 1-.404-.176.37.37 0 0 1-.144-.299c0-.156.062-.284.185-.384.125-.101.296-.152.512-.152.143 0 .266.023.37.068a.624.624 0 0 1 .246.181.56.56 0 0 1 .12.258h.75a1.092 1.092 0 0 0-.2-.566 1.21 1.21 0 0 0-.5-.41 1.813 1.813 0 0 0-.78-.152c-.293 0-.551.05-.776.15-.225.099-.4.24-.527.421-.127.182-.19.395-.19.639 0 .201.04.376.122.524.082.149.2.27.352.367.152.095.332.167.539.213l.618.144c.207.049.361.113.463.193a.387.387 0 0 1 .152.326.505.505 0 0 1-.085.29.559.559 0 0 1-.255.193c-.111.047-.249.07-.413.07-.117 0-.223-.013-.32-.04a.838.838 0 0 1-.248-.115.578.578 0 0 1-.255-.384h-.765ZM.806 13.693c0-.248.034-.46.102-.633a.868.868 0 0 1 .302-.399.814.814 0 0 1 .475-.137c.15 0 .283.032.398.097a.7.7 0 0 1 .272.26.85.85 0 0 1 .12.381h.765v-.072a1.33 1.33 0 0 0-.466-.964 1.441 1.441 0 0 0-.489-.272 1.838 1.838 0 0 0-.606-.097c-.356 0-.66.074-.911.223-.25.148-.44.359-.572.632-.13.274-.196.6-.196.979v.498c0 .379.064.704.193.976.131.271.322.48.572.626.25.145.554.217.914.217.293 0 .554-.055.785-.164.23-.11.414-.26.55-.454a1.27 1.27 0 0 0 .226-.674v-.076h-.764a.799.799 0 0 1-.118.363.7.7 0 0 1-.272.25.874.874 0 0 1-.401.087.845.845 0 0 1-.478-.132.833.833 0 0 1-.299-.392 1.699 1.699 0 0 1-.102-.627v-.495Zm8.239 2.238h-.953l-1.338-3.999h.917l.896 3.138h.038l.888-3.138h.879l-1.327 4Z"
                               />
                             </svg>
@@ -510,10 +479,10 @@ const ProductPage: React.FC = () => {
                           {product.name}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                          {formatter.format(product.price)}
+                          {formatter(product.price, "currency")}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                          {product.category}
+                          {product.category?.name || ""}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
                           {product._count ? product._count.orderItems : null}
@@ -592,4 +561,4 @@ const ProductPage: React.FC = () => {
   );
 };
 
-export default ProductPage;
+export default MenuProduct;

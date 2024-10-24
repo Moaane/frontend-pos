@@ -1,4 +1,10 @@
-import { House, PackageSearch } from "lucide-react";
+import {
+  ArrowUp,
+  ChevronDown,
+  ChevronUp,
+  House,
+  PackageSearch,
+} from "lucide-react";
 import React from "react";
 
 const Sidebar: React.FC = () => {
@@ -273,34 +279,8 @@ const Sidebar: React.FC = () => {
                   >
                     <PackageSearch className="shrink-0 size-4" />
                     Products
-                    <svg
-                      className="hs-accordion-active:block ms-auto hidden size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="m18 15-6-6-6 6" />
-                    </svg>
-                    <svg
-                      className="hs-accordion-active:hidden ms-auto block size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
+                    <ChevronUp className="hs-accordion-active:block ms-auto hidden size-4" />
+                    <ChevronDown className="hs-accordion-active:hidden ms-auto block size-4" />
                   </button>
 
                   <div
@@ -313,17 +293,17 @@ const Sidebar: React.FC = () => {
                       <li>
                         <a
                           className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
-                          href="#"
+                          href="/dashboard/products"
                         >
-                          Category
+                          Menu
                         </a>
                       </li>
                       <li>
                         <a
                           className="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
-                          href="/dashboard/products/menu"
+                          href="/dashboard/products/categories"
                         >
-                          Menu
+                          Category
                         </a>
                       </li>
                     </ul>

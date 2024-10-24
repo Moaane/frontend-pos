@@ -12,6 +12,12 @@ const Pagination: React.FC<PaginationProps> = ({
 }) => {
   const { currentPage, lastPage, prev, next } = pagination;
 
+  const startIndex = (pagination.currentPage - 1) * pagination.perPage + 1; // Indeks awal
+  const endIndex = Math.min(
+    pagination.currentPage * pagination.perPage,
+    pagination.total
+  );
+
   const getPaginationArray = () => {
     const pages = [];
     if (lastPage <= 5) {
@@ -47,7 +53,18 @@ const Pagination: React.FC<PaginationProps> = ({
   };
 
   return (
-    <div className="py-1 px-4">
+    <div className="py-1 px-4 flex justify-between">
+      <div className="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200">
+        <div>
+          <p className="text-sm text-gray-600">
+            <span className="font-semibold text-gray-800">
+              {startIndex} - {endIndex}
+              {" "}
+            </span>
+            results from {pagination.total}
+          </p>
+        </div>
+      </div>
       <nav className="flex items-center space-x-1" aria-label="Pagination">
         <button
           type="button"

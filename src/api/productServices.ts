@@ -14,9 +14,8 @@ export const getProducts = async (
     return {
       data: response.data.data,
       meta: response.data.meta,
-    }; // Mengambil data produk dari response
+    };
   } catch (error) {
-    // Tangani pembatalan permintaan dengan mengabaikan CanceledError
     if (axios.isCancel(error)) {
       console.log("Request was cancelled");
       return {

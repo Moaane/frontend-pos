@@ -11,8 +11,8 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   const location = useLocation();
   const pathSegments = location.pathname
     .split("/")
-    .filter((segment) => segment);
-
+    .filter((segment) => segment) // Menghapus segmen kosong
+    // .slice(0, location.pathname.split("/").indexOf("update"));
   return (
     <>
       <Header />

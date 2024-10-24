@@ -17,6 +17,7 @@ api.interceptors.response.use(
     if (axios.isCancel(error)) {
       // Ignore cancelled requests (due to AbortController)
       console.log("Request was cancelled");
+      return Promise.resolve();
     } else {
       // Handle other errors globally
       console.error("API error:", error);
